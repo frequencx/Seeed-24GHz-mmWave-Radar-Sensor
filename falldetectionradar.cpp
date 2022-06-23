@@ -3,12 +3,12 @@
 
 #ifdef __AVR__
     #include <SoftwareSerial.h>
-    SoftwareSerial SSerial(2, 3); // RX, TX
+    SoftwareSerial SSerial(16, 17); // RX, TX
     #define Serial1 SSerial
 #endif
 
 void FallDetectionRadar::SerialInit(){
-  Serial1.begin(9600);
+  Serial1.begin(9600, SERIAL_8N1, 16, 17);
 }
 
 // Receive data and process
